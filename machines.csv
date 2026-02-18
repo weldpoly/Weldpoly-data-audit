@@ -1,0 +1,17 @@
+Machine Name,Welding Standard,Cylinder Area (mm²),Max OD (mm),Min OD (mm),Hydraulics,High Pressure Mode,Notes / Questions
+WP250 LF,ISO 21307 SP Low Fusion,1100,250,40,Yes,No,
+WP250 HF,ISO 21307 SP High Fusion,1100,250,40,Yes,Yes,
+WP315 LF,ISO 21307 SP Low Fusion,2003,315,40,Yes,No,
+WP315 HF,ISO 21307 SP High Fusion,2003,315,40,Yes,No,
+WP355 HF,ISO 21307 SP High Fusion,2003,355,40,Yes,No,
+WP450 LF,ISO 21307 SP Low Fusion,2238,450,40,Yes,No,
+WP450 HF,ISO 21307 SP High Fusion,2238,450,40,Yes,Yes,
+WP630 LF,ISO 21307 SP Low Fusion,2307,630,40,Yes,No,
+WP800 LF Post 2008,ISO 21307 SP Low Fusion,3416,800,40,Yes,No,
+WP1000 LF,ISO 21307 SP Low Fusion,4359,1000,40,Yes,No,
+WP1200 LF,ISO 21307 SP Low Fusion,5066,1200,40,Yes,No,
+WP1600 LF (68.7),ISO 21307 SP Low Fusion,6870,1600,40,Yes,No,
+WP1600 LF (95.4),ISO 21307 SP Low Fusion,9540,1600,40,Yes,No,
+WP2000 LF,ISO 21307 SP Low Fusion,10950,2000,40,Yes,No,
+WP2500 LF,ISO 21307 SP Low Fusion,16964,2500,40,Yes,No,
+Custom,User defined,0,3000,16,Yes,No,User enters cylinder area manually
