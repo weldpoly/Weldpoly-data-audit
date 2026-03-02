@@ -11,11 +11,11 @@ All formulas currently hardcoded in the app. Please review and flag anything tha
 | **OD** | Pipe outside diameter (mm) — selected from list |
 | **SDR** | Standard Dimension Ratio — selected from list |
 | **Drag** | Drag pressure (Bar) — entered manually |
-| **Welding Standard** | ISO 21307 SP Low Fusion / High Fusion, or DVS 2207 |
+| **Welding Standard** | ISO 21307 Low Pressure Fusion (LP) /High Pressure Fusion (HP), or DVS 2207 |
 | **Machine** | Selected from machine list |
 
 **Available OD sizes (mm):**
-16, 20, 25, 32, 40, 50, 63, 75, 90, 110, 125, 140, 160, 180, 200, 225, 250, 280, 315, 355, 400, 450, 500, 560, 630, 710, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2240, 2500
+40, 50, 63, 75, 90, 110, 125, 140, 160, 180, 200, 225, 250, 280, 315, 355, 400, 450, 500, 560, 630, 710, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2250, 2500
 
 **Available SDR values:** 7.4, 9, 11, 13.6, 17, 21, 26, 41
 
@@ -44,6 +44,14 @@ interfacialArea = π × (OD − wallThickness) × wallThickness    [mm²]
 
 ```
 gaugePressure = interfacialPressure × (interfacialArea / cylinderArea) × 10 + drag    [Bar]
+The gauge pressure can be calculated from the following formula:
+GP=(IPxAs/Acx10)+DP
+where
+GP is the gauge pressure (bar);
+IP is the interfacial pressure (MPa);
+Ac is the total piston area, given by the manufacturer of the butt fusion jointing equipment (mm2);
+As is the interfacial surface area (mm2);
+DP is the drag pressure (bar).
 ```
 
 **Interfacial pressure constant** (from welding standard):
@@ -52,20 +60,21 @@ gaugePressure = interfacialPressure × (interfacialArea / cylinderArea) × 10 + 
 |---|---|
 | ISO 21307 SP Low Fusion | **0.17 MPa** |
 | ISO 21307 SP High Fusion | **0.52 MPa** |
-| DVS 2207 | **0.17 MPa** |
+| DVS 2207 | **0.15 MPa** |
 
 > ⚠️ **Please verify:** Are these values correct for your applicable edition of the standards?
-
+Yes
+> 
 **cylinderArea** = value from `machines.csv` for the selected machine.
-
+correct
 ---
 
 ## Heater Plate Temperature
 
 | Standard | Temperature Range |
 |---|---|
-| ISO 21307 SP Low Fusion | 215°C – 235°C |
-| ISO 21307 SP High Fusion | 200°C – 230°C |
+| ISO 21307 SP Low Fusion | 225°C +/- 10 |
+| ISO 21307 SP High Fusion | 215°C +/1 15 |
 | DVS 2207 | 200°C – 220°C (ideal temperature varies, see table below) |
 
 **DVS 2207 — Ideal (approximate) heater temperature:**
@@ -175,3 +184,4 @@ maxFacingPressure = drag + 20    [Bar]
 | 630 – 800 mm | 1.3 mm |
 | 800 – 1000 mm | 1.5 mm |
 | > 1000 mm | 2.0 mm |
+
